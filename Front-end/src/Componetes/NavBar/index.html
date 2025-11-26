@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+    <!-- MENU LATERAL -->
     <aside id="menu" class="menu">
         <div class="menu-content">
             <a href="#">Feed</a>
@@ -21,6 +21,7 @@
         <button id="btn-close" class="btn-close">Sair</button>
     </aside>
 
+    <!-- NOTIFICAÇÕES DROPDOWN -->
     <div id="notif-box" class="notif-box">
         <p>🚧 Rua com buraco — Rua Safira</p>
         <p>⚠️ Falta de iluminação — Rua Topázio</p>
@@ -28,21 +29,23 @@
         <p>🔥 Perigo agora — Rua Esmeralda</p>
     </div>
 
-
+    <!-- NAVBAR -->
     <nav class="navbar">
 
+        <!-- Hambúrguer -->
         <div id="hamburger" class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-
+        <!-- Perfil como BOTÃO -->
         <button class="perfil-btn" onclick="window.location.href='/perfil.html'">
-            <img src="https://via.placeholder.com/35" alt="Perfil" />
+            <img src="https://via.placeholder.com/35" alt="" />
+            <p>Ola, Itala</p>
         </button>
 
-
+        <!-- Pesquisa -->
         <div class="search-area">
             <input 
                 type="text" 
@@ -51,20 +54,21 @@
                 oninput="showSuggestions()"
             />
 
-            
-            <button class="search-btn" onclick="goToSearch()">
-                <img src="" alt="Lupa">
+            <!-- Botão da lupa -->
+            <button class="search-btn" onclick="goToSearch()"> 
+                <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="lupa">
             </button>
 
-            
+            <!-- Sugestões de endereço -->
             <div id="suggestions" class="suggestions">
-                
+                <!-- Sugestões aparecem aqui via JS -->
             </div>
         </div>
 
-        
+        <!-- Sininho -->
         <button id="notifyBtn" class="notify-btn">
-            <img src="" alt="Notificalao">
+         <img src="https://cdn-icons-png.flaticon.com/512/3602/3602145.png" alt="notificaçães">   
+            
         </button>
 
     </nav>
@@ -76,6 +80,7 @@
         const notifBox = document.getElementById("notif-box");
         const notifyBtn = document.getElementById("notifyBtn");
 
+        // ABRE MENU
         hamburger.onclick = () => {
             menu.classList.add("open");
         };
@@ -85,17 +90,18 @@
             menu.classList.remove("open");
         };
 
-        
+        // NOTIFICAÇÕES (abre/fecha)
         notifyBtn.onclick = (e) => {
             e.stopPropagation();
             notifBox.classList.toggle("open");
         };
 
-        
+        // Fechar notificações ao clicar fora
         document.body.onclick = () => {
             notifBox.classList.remove("open");
         };
 
+        // SUGESTÕES DE ENDEREÇO
         function showSuggestions() {
             const input = document.getElementById("searchInput").value;
             const box = document.getElementById("suggestions");
@@ -129,4 +135,4 @@
     </script>
 
 </body>
-</html>
+</html>         
