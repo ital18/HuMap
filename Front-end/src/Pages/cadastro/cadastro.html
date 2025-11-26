@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylecadastro.css">
+    <title>Cadastre-se</title>
+</head>
+
+<body>
+    <main>
+
+        <!--Pagina de texto da esquerda-->
+
+        <div class="left-page">
+                <img src="/Front-end/src/assets/iconhumap.png" alt="icon" name="icone-humap">
+            <div class="text-apresentacion">
+                <p class="text-cadastro">
+
+                   O HuMap é uma rede social de impacto local criada para facilitar o mapeamento e a denúncia de problemas em bairros, cidades e comunidades. Criando uma ferramenta simples, transparente e colaborativa para fortalecer a cidadania.
+               </p>
+                <p>
+                    Com o mapa interativo, o HuMap oferece um raio-x vivo dos desafios urbanos. Usuários podem denunciar, validar casos, interagir entre si e acompanhar a resposta de órgãos responsáveis.
+                </p>
+                    <p>
+                    Nosso propósito é simples: amplificar vozes locais, gerar pressão pública real e fortalecer a cidadania digital. </p>
+
+                    <p>O HuMap é onde a comunidade — impulsionada pela energia de jovens protagonistas — se une para transformar o lugar onde vive. 🌍💙</p>
+            </div>
+            <button id="btn-voltar" name="btn-voltar">Voltar</button>
+        </div>
+
+        <!--Pagina de formulario da direita-->
+
+        <div class="rigth-page">
+            <div class="form-cadastro">
+                
+                <form action="" method="get" id="form-cadastro">
+                    <img src="/Front-end/src/assets/iconhumap.png" alt="icon" name="icone-humap" class="img-rigth">
+                    <label for="">Nome : </label>
+                    <input type="text" name="nome" id="nome" required>
+                    <label for=""> E-mail : </label>
+                    <input type="email" name="email" id="email" required autocomplete="">
+                    <label for="">Senha : </label>
+                    <input type="password" name="password" id="password" required>
+                    <label for="">Confirmar senha : </label>
+                    <input type="text" name="password" id="password" required>
+                    <label for="">CPF / CNPJ : </label>
+                    <input type="number" name="cpf" id="cpf" required minlength="11" >
+                    <label for="">Data de Nascimento : </label>
+                    <input type="date" name="dt-nascimento" id="dt-nascimento" required>
+                    <label for="">Numero de telefone : </label>
+                    <input type="number" name="numero" id="numero" required>
+
+                    <!--Checkbox-->
+                    <label for=""><input type="checkbox" id="checkbox" name="checkbox" required><p>Eu concordo com os <a href="">Termosde uso</a></p></label>
+                    <label for=""><input type="checkbox" id="recebernoti" name="recebernoti"><p>Eu desejo receber notificações via e-mail</p></label>
+                    
+                    <!--botao de cadastro input method get-->
+                    <input type="submit" value="Cadastrar" id="btn-cadastrar">
+                    <button id="btn-voltar" name="btn-voltar">Voltar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
