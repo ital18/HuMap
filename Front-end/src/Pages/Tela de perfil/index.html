@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Perfil Humap</title>
+    <link rel="shortcut icon" href="icons/Mídia.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside id="menu" class="menu">
+        <div class="menu-content">
+            <a href="#">Feed</a>
+            <a href="#">Perfil</a>
+            <a href="#">Configurações</a>
+            <a href="#">Suporte</a>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Tutorial</a>
+        </div>
+        <button id="btn-close" class="btn-close">Sair</button>
+    </aside>
+
+    <!-- NOTIFICAÇÕES DROPDOWN -->
+    <div id="notif-box" class="notif-box">
+        <p>🚧 Rua com buraco — Rua Safira</p>
+        <p>⚠️ Falta de iluminação — Rua Topázio</p>
+        <p>🚨 Assalto recente — Avenida Atlântica</p>
+        <p>🔥 Perigo agora — Rua Esmeralda</p>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <!-- Hambúrguer -->
+        <div id="hamburger" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Pesquisa -->
+        <div class="search-area">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Digite o local desejado"
+                oninput="showSuggestions()"
+            />
+
+            <!-- Botão da lupa -->
+            <button class="search-btn" onclick="goToSearch()"> 
+                <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="lupa">
+            </button>
+
+            <!-- Sugestões de endereço -->
+            <div id="suggestions" class="suggestions">
+                <!-- Sugestões aparecem aqui via JS -->
+            </div>
+        </div>
+
+         <!-- Sininho -->
+        <button id="notifyBtn" class="notify-btn">
+         <img src="https://cdn-icons-png.flaticon.com/512/3602/3602145.png" alt="notificaçães">   
+            
+        </button>
+
+          <!-- Perfil como BOTÃO -->
+        <button class="perfil-btn" onclick="window.location.href='/perfil.html'">
+            <img src="https://via.placeholder.com/35" alt="" />
+            <p>Ola, Itala</p>
+        </button>
+
+    </nav>
+
+    <div id="perfil">
+        <img src="" alt="" id="perfil-img">
+        <div id="perfil-text">
+            <h1>Rafael Jose</h1>
+            <p><em>Menestrel</em></p>
+            <p>Recife - PE</p>
+            <p>Idade: 20</p>
+            <p>18 Denuncias realizadas</p>
+            
+        </div>
+
+    </div>
+
+       
+    <div class="conteudo">
+        <div class="post">
+ 
+            <div class="post-header">
+                <div class="bolinha"></div>
+                <span>Itala</span>
+            </div>
+ 
+            <div class="post-card">
+                <div class="legenda">Legenda de exemplo aqui…</div>
+            </div>
+ 
+            <div class="acoes">
+                <button><img src="icons/heart_3916579.png" alt=""></button>
+                <button><img src="icons/coment.png" alt=""></button>
+                <button><img src="icons/link.png" alt=""></button>
+                <button><img src="icons/star.png" alt=""></button>
+                <button><img src="icons/icons8-erro-50.png" alt=""></button>
+            </div>
+ 
+        </div>
+    </div>
+ 
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>         
