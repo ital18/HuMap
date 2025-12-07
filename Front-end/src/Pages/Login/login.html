@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./login.css"/>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container-principal-login">
+      <div class="coluna-formulario-login">
+        <img src="/Front-end/src/assets/logo HuMap.png" class="imagem-logo-login" alt="HuMap logo" />
+
+        <form action="" class="formulario-login">
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            title="Por favor, insira um email válido"
+          />
+
+          <label>Senha</label>
+          <input
+            type="password"
+            placeholder="Senha"
+            required
+            minlength="6"
+            title="A senha deve ter no mínimo 6 caracteres"
+          />
+
+          <a href="/Pages/Recuperação/index.html" class="link-senha-esquecida-login">Esqueci a minha senha</a>
+          <button type="submit">Login</button>
+
+          <p class="texto-registro-login">Não tem uma conta? <a href="/Front-end/src/Pages/cadastro/cadastro.html">Cadastre-se</a></p>
+        </form>
+      </div>
+
+      <div class="coluna-ilustracao-login">
+        <img src="/Front-end/src/assets/Ilustração.png" class="imagem-ilustracao-login" />
+      </div>
+    </div>
+    <script src="./login.js"></script>
+  </body>
+</html>
