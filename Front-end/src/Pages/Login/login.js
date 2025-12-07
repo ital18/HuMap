@@ -1,36 +1,47 @@
 // login.js
-const form = document.querySelector('.form');
 
-form.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Impede o formulário de recarregar a página
+// 1. Seleciona o formulário pela classe existente no HTML
+const form = document.querySelector('.formulario-login');
 
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
+if (form) {
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Impede o recarregamento da página
 
-    console.log("Enviando dados:", email); // Para você ver no F12 se funcionou
+        // 2. Seleciona os inputs pelos atributos 'type' (já que não temos IDs)
+        // O método .querySelector busca o primeiro input que corresponda ao tipo dentro do form
+        const emailInput = form.querySelector('input[type="email"]');
+        const senhaInput = form.querySelector('input[type="password"]');
 
-    try {
-        // Conecta com o Django na porta 8000
-        const response = await fetch('http://127.0.0.1:8000/api/login/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ username: email, password: senha }) 
-            // OBS: O Django padrão espera "username" e "password"
-        });
+        const email = emailInput ? emailInput.value : '';
+        const senha = senhaInput ? senhaInput.value : '';
 
-        const data = await response.json();
+        console.log("Enviando dados:", email); 
 
-        if (response.ok) {
-            alert("Login realizado com sucesso!");
-            window.location.href = "/dashboard.html"; // Exemplo de redirecionamento
-        } else {
-            alert("Erro: " + data.message);
+        try {
+            // Conecta com a API Django
+            const response = await fetch('http://127.0.0.1:8000/api/login/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: email, password: senha })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Login realizado com sucesso!");
+                // Redirecionamento (descomente quando tiver a página de destino)
+                // window.location.href = "/dashboard.html"; 
+            } else {
+                alert("Erro: " + (data.message || "Credenciais inválidas"));
+            }
+
+        } catch (error) {
+            console.error('Erro:', error);
+            alert("Erro ao conectar com o servidor.");
         }
-
-    } catch (error) {
-        console.error('Erro:', error);
-        alert("Erro ao conectar com o servidor.");
-    }
-});
+    });
+} else {
+    console.error("Erro: O formulário '.formulario-login' não foi encontrado no HTML.");
+}

@@ -121,10 +121,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Avisa ao Django para usar o modelo de usuário do nosso app 'users'
 AUTH_USER_MODEL = 'users.User'
+
