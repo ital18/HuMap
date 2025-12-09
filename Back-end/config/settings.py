@@ -123,15 +123,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 CORS_ALLOW_ALL_ORIGINS = True
-<<<<<<< Updated upstream
 
-# Avisa ao Django para usar o modelo de usuário do nosso app 'users'
-AUTH_USER_MODEL = 'users.User'
 
-=======
+
 # Avisa ao Django para usar o modelo de usuário do nosso app 'users'
 AUTH_USER_MODEL = 'users.User'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
->>>>>>> Stashed changes
