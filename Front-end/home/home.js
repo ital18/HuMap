@@ -621,3 +621,55 @@ window.addEventListener("load", () => {
   loadReportsOnMap(); // Carrega os relatórios iniciais (agora com filtro 'todos' do campo oculto)
   getUserLocation(null, true); 
 });
+
+// Função para carregar as denúncias do Django e por no mapa
+async function carregarDenuncias() {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/denuncias/');
+        const denuncias = await response.json();
+
+        // Ícones personalizados (ajuste as cores conforme sua pasta de assets ou use padrão)
+        // Dica: Você pode criar ícones diferentes para cada tipo
+        
+        denuncias.forEach(d => {
+            if (d.latitude && d.longitude) {
+                // Cria o marcador usando o Leaflet (L) ou Google Maps
+                // Supondo que você esteja usando Leaflet conforme seu HTML:
+                
+                let corIcone = 'blue'; // Padrão
+                if (d.tipo === 'violencia') corIcone = 'red';
+                if (d.tipo === 'saneamento') corIcone = 'blue';
+                if (d.tipo === 'meioambiente') corIcone = 'green';
+                if (d.tipo === 'planejamento') corIcone = 'orange';
+
+                // Cria o texto do popup
+                let popupContent = `
+                    <b>${d.tipo.toUpperCase()}</b><br>
+                    ${d.subtema ? `<i>${d.subtema}</i><br>` : ''}
+                    <p>${d.descricao}</p>
+                    <small>Em: ${new Date(d.data_criacao).toLocaleDateString()}</small>
+                `;
+
+                // Se tiver foto, adiciona a primeira no popup
+                if (d.anexos && d.anexos.length > 0) {
+                    // Ajusta a URL da imagem (o Django manda o caminho relativo)
+                    const imgUrl = d.anexos[0].arquivo; 
+                    popupContent += `<br><img src="${imgUrl}" style="width:100%; margin-top:5px; border-radius:4px;">`;
+                }
+
+                // Adiciona ao mapa (assumindo que sua variável do mapa se chama 'map')
+                L.marker([d.latitude, d.longitude])
+                 .bindPopup(popupContent)
+                 .addTo(map);
+            }
+        });
+        console.log(`${denuncias.length} denúncias carregadas.`);
+        
+    } catch (error) {
+        console.error("Erro ao carregar denúncias:", error);
+    }
+}
+
+// Chame essa função assim que o mapa iniciar
+// Procure onde você tem o 'initMap' ou onde cria o 'L.map' e coloque:
+// carregarDenuncias();
