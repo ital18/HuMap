@@ -1,31 +1,3 @@
-"""
-URL configuration for config project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-# config/urls.py
-from django.contrib import admin
-from django.urls import path, include  # <--- Não esqueça de importar o include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    
-    # Rota "Mestra": Tudo que for de auth/usuário, joga para o app users
-    # Isso vai gerar URLs como: /api/login/, /api/register/
-    path('api/', include('users.urls')), 
-]
-
 # config/urls.py
 from django.contrib import admin
 from django.urls import path, include
@@ -33,11 +5,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # Painel Administrativo
     path('admin/', admin.site.urls),
+
+    # App Core (Onde estão as denúncias e a API do mapa)
     path('', include('core.urls')), 
-    # path('users/', include('users.urls')), # Se já tiver urls no users
+
+    # App Users (Onde estão Login e Cadastro)
+    # A URL final será: /api/auth/cadastro/ e /api/auth/login/
+    path('api/auth/', include('users.urls')), 
 ]
 
-# Configuração para servir imagens durante o desenvolvimento
+# Configuração para servir as imagens enviadas (Media) durante o desenvolvimento
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
