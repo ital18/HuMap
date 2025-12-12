@@ -1,70 +1,60 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tutorial - HuMap</title>
-<link rel="stylesheet" href="tutorial.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> <!-- /Importa fontes -->
+{% extends 'Componetes/Base/base.html' %} 
+{% load static %}
 
-</head>
-<body>
+{% block title %}Tutorial - HuMap{% endblock %}
 
-<!-- MENU LATERAL -->
-<aside id="menu" class="menu" role="navigation" aria-label="Menu principal">
-    <div class="menu-content">
-        <a href="#feed">Feed</a>
-        <a href="#perfil">Perfil</a>
-        <a href="#config">Configurações</a>
-        <a href="#suporte">Suporte</a>
-        <a href="#sobre">Sobre Nós</a>
-        <a href="#tutorial">Tutorial</a>
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'Pages/Tutorial/tutorial.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <h2>COMO EXPLORAR O MAPA</h2>
+
+        <p class="compacto">
+        Procure o local desejado utilizando a barra de pesquisa ou simplesmente arrastando o mapa pela tela. Você pode usar a opção filtro para especificar o tipo de denúncia que deseja visualizar ou clicar em Adicionar para registrar uma nova denúncia.
+        </p>
+
+        <p class="compacto">
+        Utilize esse ícone <span class="plus-outline"></span> para denunciar diferentes problemáticas.
+        </p>
+
+        <h3>TIPOS DE INTERCORRÊNCIAS:</h3>
+
+        <p>
+            <span class="emoji">
+                <img src="{% static 'assets/violencia urbana.png' %}" alt="Ícone de Violência Urbana">
+            </span>
+            Violência urbana, ocorrências de assaltos e crimes de alta periculosidade
+        </p>
+        
+        <p>
+            <span class="emoji">
+                <img src="{% static 'assets/Saneamento.png' %}" alt="Ícone de Saneamento">
+            </span>
+            Problemas de saneamento básico, irregularidades no fornecimento de energia elétrica e práticas fraudulentas.
+        </p>
+        
+        <p>
+            <span class="emoji">
+                <img src="{% static 'assets/Infraestutura urbana.png' %}" alt="Ícone de Infraestrutura">
+            </span>
+            Infraestrutura urbana, transporte público e obstrução de vias.
+        </p>
+        
+        <p>
+            <span class="emoji">
+                <img src="{% static 'assets/meio ambiente.png' %}" alt="Ícone de Meio Ambiente">
+            </span>
+            Meio ambiente, com quedas de árvores, alagamentos e deslizamentos
+        </p>
     </div>
-    <button id="btn-close" aria-label="Fechar menu">Sair</button>
-</aside>
 
-<!-- CAIXA DE NOTIFICAÇÕES -->
-<div id="notif-box" aria-live="polite" role="alert">
-    <p>🚧 Rua com buraco — Rua Safira</p>
-    <p>⚠️ Falta de iluminação — Rua Topázio</p>
-    <p>🚨 Assalto recente — Av. Atlântica</p>
-    <p>🔥 Perigo — Rua Esmeralda</p>
-</div>
+    <button class="floating-button-home" onclick="window.location.href='{% url 'core:home' %}'">Voltar</button>
+{% endblock %}
 
-<!-- CABEÇALHO -->
-<header class="header">
-    <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
-    </button>
-
-    <h1>Tutorial</h1>
-
-    <button id="notify" class="notify" aria-label="Abrir notificações" aria-expanded="false">
-        <img src="/HuMap/Front-end/src/assets/Notificacao.png" alt="Sino de notificações">
-    </button>
-</header>
-
-<main>
-    <section id="tutorial">
-        <h2>COMO EXPLORAR O MAPA:</h2>
-        <p class="compacto">
-           Procure o local desejado utilizando a barra de pesquisa ou simplesmente arrastando o mapa pela tela. Você pode usar a opção filtro para especificar o tipo de denúncia que deseja visualizar ou clicar em Adicionar para registrar uma nova denúncia.
-        </p>
-        <p class="compacto">
-            Utilize este ícone <span class="plus-outline" aria-label="Adicionar denúncia"></span> para denunciar diferentes problemáticas.
-        </p>
-
-        <h3>TIPOS DE INTECORRÊNCIAS:</h3>
-        <p><span class="emoji"><img src="/HuMap/Front-end/src/assets/violencia urbana.png" alt="Violência urbana"></span> Violência urbana, ocorrências de assaltos e crimes de alta periculosidade.</p>
-        <p><span class="emoji"><img src="/HuMap/Front-end/src/assets/Saneamento.png" alt="Saneamento básico"></span> Problemas de saneamento básico, irregularidades no fornecimento de energia elétrica e práticas fraudulentas.</p>
-        <p><span class="emoji"><img src="/HuMap/Front-end/src/assets/Infraestutura urbana.png" alt="Infraestrutura urbana"></span> Infraestrutura urbana, transporte público e vias obstruídas</p>
-        <p><span class="emoji"><img src="/HuMap/Front-end/src/assets/meio ambiente.png" alt="Meio ambiente"></span> Meio ambiente: quedas de árvores, alagamentos e deslizamentos</p>
-    </section>
-</main>
-
-<!-- BOTÃO FLUTUANTE -->
-<button class="floating-button" aria-label="Ir para HuMap">HuMap</button>
-
-<script src="tutorial.js"></script>
-</body>
-</html>
+{% block extra_js %}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="{% static 'Pages/Tutorial/tutorial.js' %}"></script>
+{% endblock %}

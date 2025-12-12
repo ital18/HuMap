@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de conta</title>
+    <link rel="stylesheet" href="{% static 'Pages/Recuperação/recuperacao.css' %}">
+</head>
+
+<body>
+    <header class="topo">
+        <div class="logo">
+            <img src="{% static 'assets/logo HuMap.png' %}" alt="logo-humap">
+        </div>
+        <h1>RECUPERAÇÃO DE CONTA</h1>
+    </header>
+
+    <main class="subt-">
+        <h2>Ihhh, problema no Login?</h2>
+        <p class="subtitulo">A gente te ajuda rapidinho.</p>
+        <p>Recupere sua conta do <strong>HuMap</strong></p>
+
+        <form class="form-recuperacao" action="{% url 'users:login' %}" method="post">
+            {% csrf_token %}
+            <div class="input-container">
+                <input type="email" name="email" placeholder="Digite o e-mail para recuperação" required>
+            </div>
+
+            <a href="#" class="link-alternativo">Tentar com número de telefone</a>
+
+            <button class="btn-proximo" type="submit">Próximo</button>
+        </form>
+
+        <button class="voltar-btn" type="button" onclick="window.location.href='{% url 'users:login' %}'">Voltar</button>
+    </main>
+
+</body>
+</html>

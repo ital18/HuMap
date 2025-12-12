@@ -1,0 +1,77 @@
+{% extends 'Componetes/Base/base.html' %} 
+{% load static %}
+
+{% block title %}HuMap - Feed{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'Pages/Feed/feed.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+{% endblock %}
+
+{% block content %}
+    <main class="area-feed-feed">
+        
+        <div class="feed-header">
+            <button 
+                class="botao-voltar-feed" 
+                onclick="window.location.href='{% url 'core:home' %}'"
+                title="Voltar">
+                <img src="{% static 'assets/seta-esquerda.png' %}" alt="Voltar" class="imagem-seta-azul">
+            </button>
+            </div>
+
+        <section class="post-feed" data-id="1">
+            <div class="post-cabecalho-feed">
+                <div class="post-avatar-feed" style="background-image: url('{% static 'assets/perf.jpg' %}');"></div>
+                <span class="post-usuario-feed">Angela Costa</span>
+            </div>
+
+            <div class="post-imagem-feed"></div>
+
+            <p class="post-texto-feed">Texto da postagem...</p>
+
+            <div class="post-acoes-feed">
+                <div class="acao-feed">
+                    <i class="fa-regular fa-heart botao-curtir-feed like-btn-feed" title="Curtir"></i>
+                    <span class="curtidas-contador-feed like-count-feed">0</span>
+                </div>
+                <div class="acao-feed">
+                    <i class="fa-regular fa-comment botao-comentar-feed comment-btn-feed" title="Comentar"></i>
+                    <span class="comentarios-contador-feed comment-count-feed">0</span>
+                </div>
+                <div class="acao-feed">
+                    <i class="fa-solid fa-link botao-copiar-link-feed link-btn-feed" title="Copiar Link"></i>
+                </div>
+                <div class="acao-feed">
+                    <i class="fa-regular fa-star botao-favoritar-feed fav-btn-feed" title="Favoritar"></i>
+                </div>
+                <div class="acao-feed">
+                    <i class="fa-solid fa-triangle-exclamation botao-denunciar-feed report-btn-feed" title="Denunciar"></i>
+                </div>
+            </div>
+
+            <div class="area-comentarios-feed">
+                <div class="lista-comentarios-feed comment-list-feed"></div>
+                <div class="caixa-comentario-feed">
+                    <input type="text" class="comentario-input-feed comment-input-feed" placeholder="Escreva um comentário..." />
+                    <button class="botao-enviar-comentario-feed send-comment-feed">Enviar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay-feed">
+        <div class="modal-box-feed">
+            <h3>Reportar Problema</h3>
+            <textarea class="modal-textarea-feed" aria-label="Descrição do Problema"></textarea>
+            <div class="modal-actions-feed">
+                <button class="modal-btn-feed cancel-feed">Cancelar</button>
+                <button class="modal-btn-feed ok-feed">Enviar</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'Pages/Feed/feed.js' %}" async></script>
+{% endblock %}

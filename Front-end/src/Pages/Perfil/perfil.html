@@ -1,0 +1,112 @@
+{% extends 'Componetes/Base/base.html' %} 
+{% load static %}
+
+{% block title %}Meu Perfil - HuMap{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'Pages/Perfil/perfil.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="perfil-wrapper">
+    <div id="perfil-card">
+        <div class="perfil-info-container">
+            <div class="foto-container">
+                {% if user.foto %}
+                    <img src="{{ user.foto.url }}" alt="Foto de Perfil" id="perfil-img">
+                {% else %}
+                    <img src="{% static 'assets/perf.jpg' %}" alt="Foto Padrão" id="perfil-img">
+                {% endif %}
+            </div>
+            
+            <div id="perfil-text">
+                <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+                <p><em>"Ser responsável é entender que nossas atitudes ajudam a tornar o ambiente mais humano."</em></p>
+                
+                <p><i class="bi bi-geo-alt-fill"></i> Recife - PE</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p id="contador-denuncias">Carregando estatísticas...</p>
+            </div>
+        </div>
+        
+        <div id="perfil-icones">
+            <button title="Editar Perfil" class="btn-icone-perfil" id="btn-editar-perfil">
+                <img src="{% static 'assets/adicionar-usuario.png' %}" alt="Editar">
+            </button>
+            <button title="Mensagens" class="btn-icone-perfil" id="btn-chat">
+                <img src="{% static 'assets/chat.png' %}" alt="Chat">
+            </button>
+        </div>
+    </div>
+
+    <section class="perfil-posts">
+        <div class="posts-tabs">
+            <button class="tab-btn active" data-target="post-minhas">Minhas denúncias</button>
+            <button class="tab-btn" data-target="post-curtidas">Curtidas</button>
+            <button class="tab-btn" data-target="post-salvas">Salvas</button>
+        </div>
+
+        <div class="posts-container">
+            
+            <div id="post-minhas" class="posts-page active">
+                <div id="lista-minhas-denuncias" class="conteudo-lista">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <div id="post-curtidas" class="posts-page">
+                <p class="placeholder">Nenhuma denúncia curtida ainda.</p>
+            </div>
+
+            <div id="post-salvas" class="posts-page">
+                <p class="placeholder">Nenhuma denúncia salva ainda.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Perfil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="form-editar-perfil">
+            <div class="mb-3 text-center">
+                <label for="input-nova-foto" class="form-label" style="cursor:pointer; color:#005BB5; font-weight:bold;">
+                    <i class="bi bi-camera-fill"></i> Alterar Foto de Perfil
+                </label>
+                <input type="file" class="form-control" id="input-nova-foto" accept="image/*">
+                <div id="preview-foto" style="margin-top:10px;"></div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btn-salvar-perfil">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="hidden" id="user-name-logged" value="{{ user.first_name }}">
+<input type="hidden" id="user-email-logged" value="{{ user.email }}">
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        // CORREÇÃO AQUI: Atualizei os caminhos para 'assets/'
+        // URLs das imagens para o JS usar nos cards dinâmicos
+        window.STATIC_ICONS = {
+            like: "{% static 'assets/coracao.png' %}",
+            comment: "{% static 'assets/comente.png' %}",
+            share: "{% static 'assets/corrente.png' %}",
+            star: "{% static 'assets/estrela.png' %}",
+            alert: "{% static 'assets/atencao.png' %}",
+            default_icon: "{% static 'assets/iconhumap.png' %}"
+        };
+    </script>
+    <script src="{% static 'Pages/Perfil/perfil.js' %}"></script>
+{% endblock %}

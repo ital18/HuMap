@@ -17,13 +17,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+.container-principal-login {
   width: 100%;
   height: 100%;
   display: flex;
 }
 
-.LogoPrincipal {
+.coluna-formulario-login {
   width: 100%;
   background: #f4eddd;
   display: flex;
@@ -35,7 +35,7 @@ body {
   border-bottom-right-radius: 100px;
 }
 
-.IlustracãoPrincipal {
+.coluna-ilustracao-login {
   width: 100%;
   background: #005bb5;
   display: flex;
@@ -46,7 +46,7 @@ body {
   border-bottom-left-radius: 100px;
 }
 
-.form {
+.formulario-login {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -75,44 +75,44 @@ button {
   font-family: 'Montserrat', sans-serif;
 }
 
-.senha-esquecida,
-.registra a {
+.link-senha-esquecida-login,
+.texto-registro-login a {
   font-size: 15px;
   color: #003970;
   text-decoration: none;
 }
 
-.senha-esquecida {
+.link-senha-esquecida-login {
   align-self: center;
 }
 
-.registra {
+.texto-registro-login {
   font-size: 15px;
   margin-top: 3px;
   align-self: center;
 }
 
-.logo {
+.imagem-logo-login {
   width: 50%;
   margin-bottom: 5px;
 }
 
-.illustration {
+.imagem-ilustracao-login {
   width: 80%;
   max-width: 650px;
 }
 
 @media (max-width: 768px) {
 
-  .IlustracãoPrincipal {
+  .coluna-ilustracao-login {
     display: none;
   }
 
-  .LogoPrincipal {
+  .coluna-formulario-login {
     border-radius: 0;
   }
 
-  .form {
+  .formulario-login {
     width: 85%;
   }
 }

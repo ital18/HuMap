@@ -1,0 +1,206 @@
+{% extends 'Componetes/Base/base.html' %} 
+{% load static %}
+
+{% block title %}Suporte HuMap{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'Pages/Suporte/suporte.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <main>
+      <div class="conteudo-suport" style="max-width: 1200px; margin: 40px auto; padding: 20px;">
+        <h2 style="color: #005BB5; text-align: center; margin-bottom: 30px;">CENTRAL DE AJUDA</h2>
+        
+        <div class="fundo-carrosel-suport" aria-hidden="false">
+            <h1 style="text-align:center; margin-top:20px; color: #005BB5;">Contatos de Órgãos Públicos</h1>
+
+            <div class="container-categoria-carrosel-suport">
+
+                <div class="linha-categoria-carrosel-suport cor-vermelho-suport">
+                    <div class="info-categoria-carrosel-suport">
+                        <img src="{% static 'assets/violencia urbana.png' %}" class="icone-categoria-carrosel-suport" alt="Ícone violência">
+                        <h2>Violência urbana, assaltos e crimes de alta periculosidade</h2>
+                    </div>
+
+                    <div class="wrapper-carrosel-suport" style="width:55%;">
+                        <div class="carrosel-suport">
+                            <div class="item-carrosel-suport active">
+                                <h3><a href="https://www.gov.br/pf" target="_blank" rel="noopener">Polícia Federal – SR/PE</a></h3>
+                                <p><strong>Telefone:</strong> (81) 2137-4001</p>
+                                <a class="link-telefone-suport" href="tel:+558121374001">📱 (81) 9 9123-4001</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:gab.srpe@pf.gov.br">gab.srpe@pf.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://sds.pe.gov.br/ouvidoria" target="_blank" rel="noopener">Secretaria de Defesa Social de PE</a></h3>
+                                <p><strong>Telefone:</strong> 0800 081 5001 / (81) 3183-5298</p>
+                                <a class="link-telefone-suport" href="tel:+558131835298">📱 (81) 9 9138-5298</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoria@sds.pe.gov.br">ouvidoria@sds.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://www.gov.br/mj" target="_blank" rel="noopener">Ministério da Justiça – Ouvidoria Geral</a></h3>
+                                <p><strong>Telefone:</strong> (61) 2025-7999 / 9933</p>
+                                <a class="link-telefone-suport" href="tel:+556120257999">📱 (61) 9 9122-7999</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoriageral@mj.gov.br">ouvidoriageral@mj.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://scge.pe.gov.br/ouvidoria-geral" target="_blank" rel="noopener">Ouvidoria Geral do Estado (PE)</a></h3>
+                                <p><strong>Telefone:</strong> 162</p>
+                                <a class="link-telefone-suport" href="tel:+558100000162">📱 (81) 9 9000-0162</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoria@ouvidoria.pe.gov.br">ouvidoria@ouvidoria.pe.gov.br</a></p>
+                            </div>
+                        </div>
+
+                        <button class="seta-esquerda-carrosel-suport" aria-label="Anterior">‹</button>
+                        <button class="seta-direita-carrosel-suport" aria-label="Próximo">›</button>
+
+                    </div>
+                </div>
+
+                <div class="linha-categoria-carrosel-suport cor-amarelo-suport">
+                    <div class="info-categoria-carrosel-suport">
+                        <img src="{% static 'assets/Saneamento.png' %}" class="icone-categoria-carrosel-suport" alt="Ícone saúde">
+                        <h2>Saneamento básico, saúde pública e vigilância sanitária</h2>
+                    </div>
+                    <div class="wrapper-carrosel-suport" style="width:55%;">
+                        <div class="carrosel-suport">
+                            <div class="item-carrosel-suport active">
+                                <h3><a href="https://www.gov.br/saude" target="_blank" rel="noopener">Ministério da Saúde — Ouvidoria do SUS</a></h3>
+                                <p><strong>Telefone:</strong> 136</p>
+                                <a class="link-telefone-suport" href="tel:+551360000136">📱 (61) 9 9136-0136</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> (via Fala BR)</p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://portal.saude.pe.gov.br/ouvidoria" target="_blank" rel="noopener">Secretaria de Saúde de Pernambuco</a></h3>
+                                <p><strong>Telefone:</strong> 136</p>
+                                <a class="link-telefone-suport" href="tel:+55810000136">📱 (81) 9 9126-0136</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoria@saude.pe.gov.br">ouvidoria@saude.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://www.gov.br/anvisa" target="_blank" rel="noopener">ANVISA</a></h3>
+                                <p><strong>Telefone:</strong> 0800 642 9782</p>
+                                <a class="link-telefone-suport" href="tel:+558006429782">📱 0800 642 9782</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> (via Fale Conosco)</p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://ibge.gov.br/atendimento" target="_blank" rel="noopener">IBGE</a></h3>
+                                <p><strong>Telefone:</strong> 0800 721 8181</p>
+                                <a class="link-telefone-suport" href="tel:+558007218181">📱 0800 721 8181</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ibge@ibge.gov.br">ibge@ibge.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://www.gov.br/mds" target="_blank" rel="noopener">MDS – Assistência Social</a></h3>
+                                <p><strong>Telefone:</strong> 121</p>
+                                <a class="link-telefone-suport" href="tel:+55121">📱 121</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> (via Ouvidoria)</p>
+                            </div>
+                        </div>
+                        <button class="seta-esquerda-carrosel-suport" aria-label="Anterior">‹</button>
+                        <button class="seta-direita-carrosel-suport" aria-label="Próximo">›</button>
+                    </div>
+                </div>
+                
+                <div class="linha-categoria-carrosel-suport cor-azul-suport">
+                    <div class="info-categoria-carrosel-suport">
+                        <img src="{% static 'assets/Infraestutura urbana.png' %}" class="icone-categoria-carrosel-suport" alt="Ícone transporte">
+                        <h2>Infraestrutura urbana, transporte público e vias</h2>
+                    </div>
+                     <div class="wrapper-carrosel-suport" style="width:55%;">
+                        <div class="carrosel-suport">
+                            <div class="item-carrosel-suport active">
+                                <h3><a href="https://servicos.dnit.gov.br/multas" target="_blank" rel="noopener">DNIT</a></h3>
+                                <p><strong>Telefone:</strong> (61) 3315-4000</p>
+                                <a class="link-telefone-suport" href="tel:+556133154000">📱 (61) 9 9315-4000</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:multas@dnit.gov.br">multas@dnit.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://www.detran.pe.gov.br/fale-conosco" target="_blank" rel="noopener">DETRAN-PE</a></h3>
+                                <p><strong>Telefone:</strong> (81) 3184-8404 / 8405</p>
+                                <a class="link-telefone-suport" href="tel:+558131848404">📱 (81) 9 9184-8404</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoria@detran.pe.gov.br">ouvidoria@detran.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://cttu.recife.pe.gov.br" target="_blank" rel="noopener">CTTU – Trânsito do Recife</a></h3>
+                                <p><strong>Telefone:</strong> 0800 081 1078 / (81) 3355-5300</p>
+                                <a class="link-telefone-suport" href="tel:+558133555300">📱 (81) 9 9355-5300</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:cttu@recife.pe.gov.br">cttu@recife.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://transparencia.recife.pe.gov.br" target="_blank" rel="noopener">Prefeitura do Recife</a></h3>
+                                <p><strong>Telefone:</strong> (81) 3355-9001</p>
+                                <a class="link-telefone-suport" href="tel:+558133559001">📱 (81) 9 9555-9001</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:transparencia@recife.pe.gov.br">transparencia@recife.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://www.gov.br/inss" target="_blank" rel="noopener">INSS</a></h3>
+                                <p><strong>Telefone:</strong> 135</p>
+                                <a class="link-telefone-suport" href="tel:+55135">📱 135</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> (via Meu INSS)</p>
+                            </div>
+                        </div>
+                        <button class="seta-esquerda-carrosel-suport" aria-label="Anterior">‹</button>
+                        <button class="seta-direita-carrosel-suport" aria-label="Próximo">›</button>
+                     </div>
+                </div>
+
+                <div class="linha-categoria-carrosel-suport cor-verde-suport">
+                    <div class="info-categoria-carrosel-suport">
+                        <img src="{% static 'assets/meio ambiente.png' %}" class="icone-categoria-carrosel-suport" alt="Ícone ambiente">
+                        <h2>Meio ambiente e proteção animal</h2>
+                    </div>
+                     <div class="wrapper-carrosel-suport" style="width:55%;">
+                        <div class="carrosel-suport">
+                             <div class="item-carrosel-suport active">
+                                <h3><a href="https://cprh.pe.gov.br" target="_blank" rel="noopener">CPRH – Meio Ambiente</a></h3>
+                                <p><strong>Telefone:</strong> (81) 3182-8923</p>
+                                <a class="link-telefone-suport" href="tel:+558131828923">📱 (81) 9 9128-8923</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoriaambiental@cprh.pe.gov.br">ouvidoriaambiental@cprh.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://alepe.pe.gov.br" target="_blank" rel="noopener">ALEPE – Ouvidoria</a></h3>
+                                <p><strong>Telefone:</strong> (81) 3183-2211</p>
+                                <a class="link-telefone-suport" href="tel:+558131832211">📱 (81) 9 9138-2211</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:ouvidoria@alepe.pe.gov.br">ouvidoria@alepe.pe.gov.br</a></p>
+                            </div>
+                            <div class="item-carrosel-suport">
+                                <h3><a href="https://defensoria.pe.def.br/enderecos" target="_blank" rel="noopener">Defensoria Pública de Pernambuco</a></h3>
+                                <p><strong>Telefone:</strong> (81) 3182-5357</p>
+                                <a class="link-telefone-suport" href="tel:+558131825357">📱 (81) 9 9125-5357</a>
+                                <p style="margin-top:8px;"><strong>E-mail:</strong> <a href="mailto:atendimento@defensoria.pe.gov.br">atendimento@defensoria.pe.gov.br</a></p>
+                            </div>
+                        </div>
+                        <button class="seta-esquerda-carrosel-suport" aria-label="Anterior">‹</button>
+                        <button class="seta-direita-carrosel-suport" aria-label="Próximo">›</button>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="container-layout-suport">
+            <img src="{% static 'assets/logo HuMap.png' %}" class="imagem-logo-suport" alt="HuMap">
+            <div class="texto-info-suport">
+                <p>HuMap</p>
+                <p class="link-telefone-suport">Telefone: 9999-9999</p>
+                <p>Email: contato@humap.srv.br</p>
+            </div>
+            <button class="botao-faq-suport">
+                <span class="texto-faq-suport">Perguntas<br />Frequentes</span>
+                <img src="{% static 'assets/conversations.png' %}" alt="FAQ" class="icone-faq-suport" />
+            </button>
+        </div>
+      </div>
+    </main>
+    
+    <button
+      class="floating-button-home" 
+      onclick="window.location.href='{% url 'core:home' %}'"
+    >
+      Voltar
+    </button>
+    
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'Pages/Suporte/suporte.js' %}"></script>
+{% endblock %}

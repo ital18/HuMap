@@ -1,0 +1,253 @@
+{% extends 'Componetes/Base/base.html' %} 
+{% load static %}
+
+{% block title %}HuMap - Sobre Nós{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'Pages/SobreNos/sobre.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+    <div class="sobre-wrapper">
+        <div class="card-projeto">
+            <h1 class="titulo-pagina">SOBRE NÓS</h1>
+
+            <div class="linha-duas-colunas">
+                <p class="texto-destaque">
+                    O HuMap é uma rede social de impacto local criada para mapear, denunciar e acompanhar problemas em comunidades, bairros e cidades, promovendo uma nova forma de participação cidadã. A iniciativa nasceu de um grupo de jovens estudantes do Senac Pernambuco — Recife, movidos pelo desejo de transformar indignação em ação.
+                </p>
+                <img src="{% static 'assets/logo HuMap.png' %}" alt="Logo HuMap" class="imagem-lateral-sobre">
+            </div>
+
+            <div class="texto-completo">
+                <p>Com um mapa interativo, filtros inteligentes e recursos típicos das redes sociais — como curtidas, comentários e compartilhamentos — o HuMap permite que cidadãos tornem visíveis as dificuldades de suas regiões e cobrem soluções de forma coletiva.</p>
+                <p>Nosso propósito é <strong>claro</strong>: amplificar vozes locais, gerar pressão pública inteligente e fortalecer a cidadania digital. Por meio da transparência e da colaboração, o HuMap promove a participação contínua para melhorias reais nos territórios.</p>
+            </div>
+        </div>
+
+        <section class="equipe-section">
+            <h1 class="titulo-equipe">Equipe HuMap</h1>
+            <p class="subtitulo-equipe">Conheça as mentes por trás do projeto.</p>
+            
+            <div class="cards-container">
+                <div class="card-membro">
+                    <img src="{% static 'assets/Alan Francisco.jpg' %}" alt="Alan Francisco" class="foto-membro">
+                    <h2>Alan Francisco</h2>
+                    <p class="info-idade">19 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/Alan8433" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/alan-francisco-0495143a0/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Amanda.jpg' %}" alt="Amanda Conceição" class="foto-membro">
+                    <h2>Amanda Conceição</h2>
+                    <p class="info-idade">26 anos</p>
+                    <p class="info-funcao">Desenvolvedora Front-end</p>
+                    <div class="links-membro">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Bruno.jpg' %}" alt="Bruno Nascimento" class="foto-membro">
+                    <h2>Bruno Nascimento</h2>
+                    <p class="info-idade">23 anos</p>
+                    <p class="info-funcao">Designer</p>
+                    <div class="links-membro">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Milenna.jpg' %}" alt="Edna Milenna" class="foto-membro">
+                    <h2>Edna Milenna</h2>
+                    <p class="info-idade">27 anos</p>
+                    <p class="info-funcao">Líder Back-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/milennasx" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/edna-milenna-x-34ab42345" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Isabela.jpg' %}" alt="Isabela Regina" class="foto-membro">
+                    <h2>Isabela Regina</h2>
+                    <p class="info-idade">21 anos</p>
+                    <p class="info-funcao">Desenvolvedora Back-end</p>
+                    <div class="links-membro">
+                        <a href="http://github.com/isaaregina" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/isaaregina" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Itala.jpg' %}" alt="Itala Samara" class="foto-membro">
+                    <h2>Itala Samara</h2>
+                    <p class="info-idade">27 anos</p>
+                    <p class="info-funcao">P.O (Product Owner)</p>
+                    <div class="links-membro">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Joao silva.jpg' %}" alt="João Bento" class="foto-membro">
+                    <h2>João Bento</h2>
+                    <p class="info-idade">21 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/Joao021-code" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/joão-victor-silva-bento-2375331b3" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/João Sousa.jpg' %}" alt="João Sousa" class="foto-membro">
+                    <h2>João Sousa</h2>
+                    <p class="info-idade">23 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/Skyrunor" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-sousa-silva-80b36b382" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Lucas Henrique.jpg' %}" alt="Lucas Henrique" class="foto-membro">
+                    <h2>Lucas Henrique</h2>
+                    <p class="info-idade">25 anos</p>
+                    <p class="info-funcao">Desenvolvedor Back-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/lurikke" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/lucas-henrique-costa-de-brito-45077037a" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Luiz.jpg' %}" alt="Luiz Filipe" class="foto-membro">
+                    <h2>Luiz Filipe</h2>
+                    <p class="info-idade">25 anos</p>
+                    <p class="info-funcao">Designer</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/lfom0604" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/luiz-filipe-1b5836221" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Marcos.jpg' %}" alt="Marcos Alirio" class="foto-membro">
+                    <h2>Marcos Alirio</h2>
+                    <p class="info-idade">26 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/MarcosAlirio99" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/marcos-a-43062613b" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Maria Eduarda.jpg' %}" alt="Maria Eduarda" class="foto-membro">
+                    <h2>Maria Eduarda</h2>
+                    <p class="info-idade">26 anos</p>
+                    <p class="info-funcao">Designer</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/eduuarda5799" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/maria-eduarda-campos-1059941a9/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Mayk.jpg' %}" alt="Mayke Pedrosa" class="foto-membro">
+                    <h2>Mayke Pedrosa</h2>
+                    <p class="info-idade">30 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="mailto:mwpbcompany@gmail.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/mayk-wesley-304059209" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Matheus.jpg' %}" alt="Matheus Felipe" class="foto-membro">
+                    <h2>Matheus Felipe</h2>
+                    <p class="info-idade">25 anos</p>
+                    <p class="info-funcao">Líder do Front-end</p>
+                    <div class="links-membro">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/matheusfelipedacostasilva/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Rafael.jpg' %}" alt="Rafael José" class="foto-membro">
+                    <h2>Rafael José</h2>
+                    <p class="info-idade">20 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/Rafaeljose-afk" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/rafael-jose-aa7ab2365" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Rodrigo.jpg' %}" alt="Rodrigo Marcelo" class="foto-membro">
+                    <h2>Rodrigo Marcelo</h2>
+                    <p class="info-idade">29 anos</p>
+                    <p class="info-funcao">Desenvolvedor Front-end</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/Rodrigomarcelo194" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/rodrigo-marcelo-0780941b9" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Samara.jpg' %}" alt="Samara Pimentel" class="foto-membro">
+                    <h2>Samara Pimentel</h2>
+                    <p class="info-idade">25 anos</p>
+                    <p class="info-funcao">Documentação</p>
+                    <div class="links-membro">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/samara-pimentel-9427182a6" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Vitor Hugo.jpg' %}" alt="Vitor Hugo" class="foto-membro">
+                    <h2>Vitor Hugo</h2>
+                    <p class="info-idade">24 anos</p>
+                    <p class="info-funcao">Designer</p>
+                    <div class="links-membro">
+                        <a href="" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/vitorhfmelo/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="card-membro">
+                    <img src="{% static 'assets/Yasmim.jpg' %}" alt="Yasmim Bartira" class="foto-membro">
+                    <h2>Yasmim Bartira</h2>
+                    <p class="info-idade">21 anos</p>
+                    <p class="info-funcao">Designer</p>
+                    <div class="links-membro">
+                        <a href="https://github.com/bartmim" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/yasmim-bartira-sales-lisboa-3ab82a362" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    
+    <button class="floating-button-home" onclick="window.location.href='{% url 'core:home' %}'">Voltar</button>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'Pages/SobreNos/sobre.js' %}" async></script>
+{% endblock %}

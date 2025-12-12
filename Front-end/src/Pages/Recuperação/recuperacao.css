@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.topo {
+    background-color: #005BB5; /* Azul HuMap */
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.topo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* MAIN CARD */
+main {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+strong {
+    color: #005BB5;
+}
+
+/* FORMULÁRIO */
+.form-recuperacao {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-container input:focus {
+    border-color: #005BB5;
+}
+
+.link-alternativo {
+    font-size: 0.85rem;
+    color: #005BB5;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.link-alternativo:hover {
+    text-decoration: underline;
+}
+
+/* BOTÕES */
+.btn-proximo {
+    background-color: #005BB5;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-proximo:hover {
+    background-color: #004494;
+}
+
+.voltar-btn {
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid #005BB5;
+    color: #005BB5;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.voltar-btn:hover {
+    background: #f0f8ff;
+}

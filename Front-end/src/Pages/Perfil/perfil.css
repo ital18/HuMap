@@ -1,0 +1,242 @@
+/* Layout Wrapper */
+.perfil-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* --- CABEÇALHO DO PERFIL --- */
+#perfil-card {
+    display: flex;
+    background-color: #005BB5;
+    color: white;
+    border-radius: 0 0 15px 15px;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.perfil-info-container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+#perfil-img {
+    width: 140px;
+    height: 140px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.3);
+}
+
+#perfil-text h1 {
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#perfil-text p {
+    margin: 5px 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+#perfil-icones {
+    display: flex;
+    gap: 15px;
+}
+
+#perfil-icones button {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+#perfil-icones button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+#perfil-icones img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Deixa branco */
+}
+
+/* --- ABAS E POSTS --- */
+.perfil-posts {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.posts-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: #005BB5;
+    background-color: #f9f9f9;
+}
+
+.tab-btn.active {
+    color: #005BB5;
+    border-bottom: 3px solid #005BB5;
+}
+
+.posts-page {
+    display: none;
+    min-height: 200px;
+}
+
+.posts-page.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.placeholder {
+    text-align: center;
+    color: #888;
+    padding: 40px 0;
+    font-style: italic;
+}
+
+/* Estilo do Post Individual (Card) */
+.post-card-perfil {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.post-card-perfil:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.bolinha-user {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-user {
+    font-weight: 700;
+    color: #333;
+}
+
+.post-body {
+    display: flex;
+    gap: 15px;
+}
+
+.post-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-titulo {
+    color: #005BB5;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.post-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.post-acoes {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+}
+
+.btn-acao {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-acao img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.btn-acao:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #perfil-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .perfil-info-container {
+        flex-direction: column;
+    }
+
+    #perfil-text h1 {
+        font-size: 1.5rem;
+    }
+}

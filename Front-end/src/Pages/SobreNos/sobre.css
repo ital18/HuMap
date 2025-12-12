@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* --- LAYOUT GERAL --- */
+.sobre-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* --- SEÇÃO 1: SOBRE O PROJETO (Card Branco) --- */
+.card-projeto {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.titulo-pagina {
+    color: #005BB5;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.linha-duas-colunas {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.texto-destaque {
+    flex: 1;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    line-height: 1.8;
+    color: #444;
+}
+
+.imagem-lateral-sobre {
+    width: 30%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+.texto-completo p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* --- SEÇÃO 2: EQUIPE HUMAP --- */
+.equipe-section {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.titulo-equipe {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #005bb5;
+    margin-bottom: 10px;
+}
+
+.subtitulo-equipe {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* GRADE DE CARDS */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* ESTILO DO CARD DE MEMBRO */
+.card-membro {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #f0f0f0;
+}
+
+.card-membro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 91, 181, 0.15); /* Sombra azulada */
+}
+
+/* FOTO */
+.foto-membro {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #005BB5; /* Borda azul na foto */
+}
+
+/* NOME */
+.card-membro h2 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* INFOS */
+.info-idade, .info-funcao {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #666;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.info-funcao {
+    color: #005BB5;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* LINKS SOCIAIS */
+.links-membro {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: auto; /* Empurra para o fundo se o card crescer */
+}
+
+.links-membro a {
+    text-decoration: none;
+    background: #005bb5;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.links-membro a:hover {
+    background: #003f80;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .linha-duas-colunas {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .imagem-lateral-sobre {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Um por linha no mobile */
+        padding: 0 10px;
+    }
+    
+    .card-projeto {
+        padding: 20px;
+    }
+}

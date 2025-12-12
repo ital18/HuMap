@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
+{% load static %} 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylecadastro.css">
+    <link rel="stylesheet" href="{% static 'Pages/Cadastro/cadastro.css' %}">
     <title>Cadastre-se</title>
 </head>
 
 <body>
     <main>
 
-        <!--Pagina de texto da esquerda-->
-
         <div class="left-page">
-                <img src="/Front-end/src/assets/iconhumap.png" alt="icon" name="icone-humap">
+            <img src="{% static 'assets/iconhumap.png' %}" alt="icon" name="icone-humap">
             <div class="text-apresentacion">
                 <p class="text-cadastro">
-
                    O HuMap é uma rede social de impacto local criada para facilitar o mapeamento e a denúncia de problemas em bairros, cidades e comunidades. Criando uma ferramenta simples, transparente e colaborativa para fortalecer a cidadania.
                </p>
                 <p>
@@ -28,42 +26,101 @@
 
                     <p>O HuMap é onde a comunidade — impulsionada pela energia de jovens protagonistas — se une para transformar o lugar onde vive. 🌍💙</p>
             </div>
-            <button id="btn-voltar" name="btn-voltar">Voltar</button>
+            <button id="btn-voltar" name="btn-voltar" onclick="window.location.href='{% url 'users:login' %}'">Voltar</button>
         </div>
-
-        <!--Pagina de formulario da direita-->
 
         <div class="rigth-page">
             <div class="form-cadastro">
                 
-                <form action="" method="get" id="form-cadastro">
-                    <img src="/Front-end/src/assets/iconhumap.png" alt="icon" name="icone-humap" class="img-rigth">
-                    <label for="">Nome : </label>
-                    <input type="text" name="nome" id="nome" required>
-                    <label for=""> E-mail : </label>
-                    <input type="email" name="email" id="email" required autocomplete="">
-                    <label for="">Senha : </label>
-                    <input type="password" name="password" id="password" required>
-                    <label for="">Confirmar senha : </label>
-                    <input type="text" name="password" id="password" required>
-                    <label for="">CPF / CNPJ : </label>
-                    <input type="number" name="cpf" id="cpf" required minlength="11" >
-                    <label for="">Data de Nascimento : </label>
-                    <input type="date" name="dt-nascimento" id="dt-nascimento" required>
-                    <label for="">Numero de telefone : </label>
-                    <input type="number" name="numero" id="numero" required>
-
-                    <!--Checkbox-->
-                    <label for=""><input type="checkbox" id="checkbox" name="checkbox" required><p>Eu concordo com os <a href="">Termosde uso</a></p></label>
-                    <label for=""><input type="checkbox" id="recebernoti" name="recebernoti"><p>Eu desejo receber notificações via e-mail</p></label>
+                <form id="form-cadastro">
+                    {% csrf_token %}
                     
-                    <!--botao de cadastro input method get-->
+                    <img src="{% static 'assets/iconhumap.png' %}" alt="icon" name="icone-humap" class="img-rigth">
+                    
+                    <label for="nome">Nome : </label>
+                    <input type="text" name="nome" id="nome" required>
+                    
+                    <label for="email"> E-mail : </label>
+                    <input type="email" name="email" id="email" required autocomplete="email">
+                    
+                    <label for="password">Senha : </label>
+                    <input type="password" name="password" id="password" required>
+                    
+                    <label for="confirm_password">Confirmar senha : </label>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
+                    
+                    <label for="cpf">CPF / CNPJ : </label>
+                    <input type="text" inputmode="numeric" name="cpf" id="cpf" required minlength="11" maxlength="14" placeholder="Apenas números">
+                    
+                    <label for="dt-nascimento">Data de Nascimento : </label>
+                    <input type="date" name="data_nascimento" id="dt-nascimento" required>
+                    
+                    <label for="numero">Numero de telefone : </label>
+                    <input type="text" inputmode="numeric" name="telefone" id="numero" required placeholder="(DDD) 90000-0000">
+
+                    <label for="checkbox"><input type="checkbox" id="checkbox" name="checkbox" required><p>Eu concordo com os <a href="">Termos de uso</a></p></label>
+                    
+                    <label for="recebernoti"><input type="checkbox" id="recebernoti" name="receber_notificacoes"><p>Eu desejo receber notificações via e-mail</p></label>
+                    
                     <input type="submit" value="Cadastrar" id="btn-cadastrar">
-                    <button id="btn-voltar" name="btn-voltar">Voltar</button>
+                    <button type="button" id="btn-voltar-mobile" name="btn-voltar" onclick="window.location.href='{% url 'users:login' %}'">Voltar</button>
                 </form>
             </div>
         </div>
     </main>
-</body>
 
+    <script>
+        document.getElementById('form-cadastro').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Impede o envio padrão que recarregaria a página
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Corrige checkboxes (se não marcado, não envia no FormData)
+            data.receber_notificacoes = document.getElementById('recebernoti').checked;
+
+            try {
+                const response = await fetch("{% url 'users:api_cadastro' %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Verifica o tipo de conteúdo da resposta
+                const contentType = response.headers.get("content-type");
+                
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    // Se for JSON, processa normalmente
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        alert('Cadastro realizado com sucesso!');
+                        window.location.href = "{% url 'users:login' %}";
+                    } else {
+                        // Monta mensagem de erro amigável vinda do Django
+                        let msg = 'Erro ao cadastrar:\n';
+                        for (const [key, value] of Object.entries(result)) {
+                            // Se for lista de erros, junta com vírgula
+                            let errorText = Array.isArray(value) ? value.join(', ') : value;
+                            msg += `- ${key}: ${errorText}\n`;
+                        }
+                        alert(msg);
+                    }
+                } else {
+                    // Se NÃO for JSON (provavelmente é a tela de erro HTML amarela do Django - Erro 500)
+                    const text = await response.text();
+                    console.error("Erro Crítico no Servidor:", text);
+                    alert("Ocorreu um erro interno no servidor (Erro 500).\nVerifique o terminal do Python para ver o motivo exato.");
+                }
+
+            } catch (error) {
+                console.error('Erro de rede:', error);
+                alert('Erro de conexão ao tentar cadastrar. Verifique se o servidor está rodando.');
+            }
+        });
+    </script>
+</body>
 </html>
